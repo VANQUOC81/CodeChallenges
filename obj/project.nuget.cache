@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "SMzmpMdZ9W+WBvP1Ozxgq+bMuxe61+LMMS/v0WbIsT93Ao8LzmNZbv6X11mQlyLT+QsVOfyuTZR4rzip29psuw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\Documents\\GitHub\\LeetCodeChallenges\\LeetCodeChallenges.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.13\\microsoft.netcore.app.host.win-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
