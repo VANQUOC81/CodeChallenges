@@ -6,10 +6,10 @@ Visual Studio Code
 .NET 6.0 SDK
 
 ## Getting Started
-Clone this repository
-Open the project in Visual Studio Code
-Copy paste specific test into Program.cs
-Run the test by hitting Ctrl+F5
+1. Clone this repository
+2. Open the project in Visual Studio Code
+3. Copy paste specific test into Program.cs
+4. Run the test by hitting Ctrl+F5
 
 ## Usage
 This repository is intended to be used for reference and learning purposes. You can view the code for each problem in the root directory.
