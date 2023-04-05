@@ -1,6 +1,5 @@
 // /**
-// * Original Author Turgay, http://csharpexamples.com/c-binary-search-tree-implementation/
-// * Modified by Paul Mehta 2019/11/05
+// * By Van Quoc Nguyen 2022/12/05
 // **/
 
 // namespace InterviewPrep
