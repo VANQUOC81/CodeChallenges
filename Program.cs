@@ -1,6 +1,7 @@
 ﻿// XX. description
 using CodeChallenges.Interfaces;
 using Hackerrank;
+using LeetCode;
 using Microsoft.Extensions.DependencyInjection;
 
 public class Program
@@ -10,11 +11,12 @@ public class Program
         // configure and register services in container
         var services = new ServiceCollection();
         services.AddSingleton<ICodeChallenge, TimeConversion>();
+        services.AddSingleton<ICodeChallenge, IntersectionofTwoArrayII>();
         var serviceProvider = services.BuildServiceProvider();
 
         // get services
         var requiredServices = serviceProvider.GetServices<ICodeChallenge>()
-        .First(x => x.CodeChallengeSource == Enums.CodeChallengeSource.Hankerrank && x.GetType().Name == "TimeConversion");
+        .First(x => x.CodeChallengeSource == Enums.CodeChallengeSource.LeetCode && x.GetType().Name == "IntersectionofTwoArrayII");
 
         var result = requiredServices.Execute();
 

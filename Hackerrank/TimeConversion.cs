@@ -7,6 +7,8 @@ namespace Hackerrank
     {
         public CodeChallengeSource CodeChallengeSource => CodeChallengeSource.Hankerrank;
 
+        public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
+
         public string Execute()
         {
             const string s = "07:05:45PM";

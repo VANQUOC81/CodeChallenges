@@ -6,6 +6,8 @@ namespace CodeChallenges.Interfaces
     {
         CodeChallengeSource CodeChallengeSource { get; }
 
+        int CodeChallengeNumber { get; }
+
         string Execute();
     }
 }
