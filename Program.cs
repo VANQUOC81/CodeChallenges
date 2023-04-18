@@ -1,5 +1,4 @@
-﻿// XX. description
-using CodeChallenges.Interfaces;
+﻿using CodeChallenges.Interfaces;
 using Hackerrank;
 using LeetCode;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,14 +11,22 @@ public class Program
         var services = new ServiceCollection();
         services.AddSingleton<ICodeChallenge, TimeConversion>();
         services.AddSingleton<ICodeChallenge, IntersectionofTwoArrayII>();
+        services.AddSingleton<ICodeChallenge, FindTheTownJudge>();
+        services.AddSingleton<ICodeChallenge, MinimumOperationsToMakeTheArrayIncreasing>();
         var serviceProvider = services.BuildServiceProvider();
 
         // get services
         var requiredServices = serviceProvider.GetServices<ICodeChallenge>()
-        .First(x => x.CodeChallengeSource == Enums.CodeChallengeSource.LeetCode && x.GetType().Name == "IntersectionofTwoArrayII");
+        .First(x => x.CodeChallengeSource == Enums.CodeChallengeSource.LeetCode && x.GetType().Name == "MinimumOperationsToMakeTheArrayIncreasing");
 
         var result = requiredServices.Execute();
 
-        Console.WriteLine(result);
+            var concatResult = "";
+
+            foreach (var innerresult in result)
+            {
+                concatResult = string.Join(", ", innerresult);
+                Console.WriteLine(concatResult);
+            }
     }
 }
