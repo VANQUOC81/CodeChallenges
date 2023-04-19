@@ -4,7 +4,9 @@
 # ignore local user settings files
 /.vs
 /.vscode
-/bin
-/obj
+/Source/bin
+/Source/obj
+/Tests/bin
+/Tests/obj
 /Turing interview prep/Turing Coding Challenge Solution.txt
 /Turing interview prep/*.png
