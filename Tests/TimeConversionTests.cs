@@ -1,4 +1,4 @@
-using Source.Hackerrank;
+using Common.Hackerrank;
 
 namespace CodeChallenges.Tests
 {

@@ -1,4 +1,4 @@
-namespace Source.Enums
+namespace Common.Enums
 {
     public enum CodeChallengeSource
     {

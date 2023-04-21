@@ -1,6 +1,6 @@
-using Source.Enums;
+using Common.Enums;
 
-namespace Source.Interfaces
+namespace Common.Interfaces
 {
     public interface ICodeChallenge
     {

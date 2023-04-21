@@ -1,7 +1,7 @@
-using Source.Interfaces;
-using Source.Enums;
+using Common.Interfaces;
+using Common.Enums;
 
-namespace Source.LeetCode
+namespace Common.LeetCode
 {
     public class MinimumOperationsToMakeTheArrayIncreasing : ICodeChallenge
     {

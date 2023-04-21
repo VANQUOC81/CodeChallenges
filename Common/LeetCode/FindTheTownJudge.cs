@@ -1,7 +1,9 @@
-using Source.Interfaces;
-using Source.Enums;
+using Common.Interfaces;
+using Common.Enums;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Source.LeetCode
+namespace Common.LeetCode
 {
     public class FindTheTownJudge : ICodeChallenge
     {

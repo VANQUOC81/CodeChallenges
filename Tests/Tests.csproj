@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Source\CodeChallenges.csproj" />
+    <ProjectReference Include="..\common\common.csproj" />
   </ItemGroup>
 
 </Project>

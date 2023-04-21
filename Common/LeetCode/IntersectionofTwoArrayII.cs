@@ -1,7 +1,8 @@
-using Source.Interfaces;
-using Source.Enums;
+using Common.Interfaces;
+using Common.Enums;
+using System.Collections.Generic;
 
-namespace Source.LeetCode
+namespace Common.LeetCode
 {
     public class IntersectionofTwoArrayII : ICodeChallenge
     {

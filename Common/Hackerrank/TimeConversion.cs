@@ -1,7 +1,9 @@
-using Source.Enums;
-using Source.Interfaces;
 
-namespace Source.Hackerrank
+using System;
+using Common.Enums;
+using Common.Interfaces;
+
+namespace Common.Hackerrank
 {
     public class TimeConversion : ICodeChallenge
     {

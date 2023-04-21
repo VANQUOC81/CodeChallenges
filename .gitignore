@@ -8,5 +8,7 @@
 /Source/obj
 /Tests/bin
 /Tests/obj
+/Common/bin
+/Common/obj
 /Turing interview prep/Turing Coding Challenge Solution.txt
 /Turing interview prep/*.png
