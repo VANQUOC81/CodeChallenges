@@ -1,6 +1,6 @@
 using Common.Hackerrank;
 
-namespace CodeChallenges.Tests
+namespace CodeChallenges.Tests.Hackerrank
 {
     [TestClass]
     public class TimeConversionTests

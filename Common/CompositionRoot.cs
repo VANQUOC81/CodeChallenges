@@ -14,6 +14,7 @@ public static class CompositionRoot
         services.AddSingleton<ICodeChallenge, IntersectionofTwoArrayII>();
         services.AddSingleton<ICodeChallenge, FindTheTownJudge>();
         services.AddSingleton<ICodeChallenge, MinimumOperationsToMakeTheArrayIncreasing>();
+        services.AddSingleton<ICodeChallenge, RomanToInteger>();
 
         return services;
     }
