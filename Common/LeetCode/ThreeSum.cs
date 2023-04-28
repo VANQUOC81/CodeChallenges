@@ -5,7 +5,7 @@ using System;
 
 namespace Common.LeetCode
 {
-    public class Three_Sum : ICodeChallenge
+    public class ThreeSum : ICodeChallenge
     {
         public CodeChallengeSource CodeChallengeSource => CodeChallengeSource.LeetCode;
 
@@ -13,7 +13,7 @@ namespace Common.LeetCode
 
         public string Execute()
         {
-            var result = ThreeSum(new int[] { -1, 0, 1, 2, -1, -4 });
+            var result = threeSum(new int[] { -1, 0, 1, 2, -1, -4 });
 
             var concat = "";
 
@@ -25,7 +25,7 @@ namespace Common.LeetCode
             return concat;
         }
 
-        public IList<IList<int>> ThreeSum(int[] nums)
+        public IList<IList<int>> threeSum(int[] nums)
         {
             Array.Sort(nums); // sort the array
             IList<IList<int>> result = new List<IList<int>>();

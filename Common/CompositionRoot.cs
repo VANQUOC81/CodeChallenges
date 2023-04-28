@@ -15,6 +15,7 @@ public static class CompositionRoot
         services.AddSingleton<ICodeChallenge, FindTheTownJudge>();
         services.AddSingleton<ICodeChallenge, MinimumOperationsToMakeTheArrayIncreasing>();
         services.AddSingleton<ICodeChallenge, RomanToInteger>();
+        services.AddSingleton<ICodeChallenge, ThreeSum>();
 
         return services;
     }
