@@ -1,6 +1,5 @@
 using Common.Interfaces;
 using Common.Enums;
-using System.Collections.Generic;
 
 namespace Common.LeetCode
 {
