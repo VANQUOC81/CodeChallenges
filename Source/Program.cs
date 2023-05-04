@@ -56,17 +56,9 @@ namespace Source
                     // get filename without extension
                     string fileName = Path.GetFileNameWithoutExtension(file);
 
-                    // load the desired assembly
-                    Assembly externalAssembly = Assembly.LoadFrom("../Common/obj/Debug/net6.0/common.dll");
-
-                    Type type = externalAssembly.GetType($"Common.LeetCode.{fileName}");
-                    if (type == null) continue;
-                    object instance = Activator.CreateInstance(type);
-
-                    PropertyInfo propertyInfo = type.GetProperty("CodeChallengeNumber");
-                    propertyInfo.GetValue(instance);
-
-                    Console.WriteLine($"{fileName}: {propertyInfo.GetValue(instance)}");
+                    var CodeChallengeNumber = GetCodeChallengeNumber(fileName);
+                    if (CodeChallengeNumber == null) continue;
+                    Console.WriteLine($"{fileName}: {CodeChallengeNumber}");
                 }
 
                 Console.WriteLine();
@@ -85,6 +77,20 @@ namespace Source
             }
 
             return number;
+        }
+
+        private static object? GetCodeChallengeNumber(string fileName)
+        {
+            // load the desired assembly
+            Assembly externalAssembly = Assembly.LoadFrom("../Common/obj/Debug/net6.0/common.dll");
+
+            Type type = externalAssembly.GetType($"Common.LeetCode.{fileName}");
+            if (type == null) return null;
+            object instance = Activator.CreateInstance(type);
+
+            PropertyInfo propertyInfo = type.GetProperty("CodeChallengeNumber");
+
+            return propertyInfo.GetValue(instance);
         }
     }
 }
