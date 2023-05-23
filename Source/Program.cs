@@ -1,32 +1,20 @@
 ﻿using Common.Interfaces;
 using Common.Enums;
-using Common;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.IO;
 using System.Reflection;
+using Source.Factories;
 
 namespace Source
 {
-    public class Program
+    public static class Program
     {
         public static void Main()
         {
+            // show options
             int number = ShowConsoleCommands();
             if (number != 0)
             {
-                // configure and register services in container
-                ServiceProvider serviceProvider = new ServiceCollection()
-                 .AddMyAppServices()
-                 .BuildServiceProvider();
-
-                // get services and scope only the dependencies registered for this container
-                using var scope = serviceProvider.CreateScope();
-
-                var requiredServices = scope.ServiceProvider.GetServices<ICodeChallenge>()
-                .First(x => x.CodeChallengeSource == CodeChallengeSource.LeetCode && x.CodeChallengeNumber == number);
-
-                var result = requiredServices.Execute();
+                var result = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
+                First(x => x.CodeChallengeSource == CodeChallengeSource.LeetCode && x.CodeChallengeNumber == number).Execute();
 
                 var concatResult = string.Empty;
 
@@ -64,7 +52,7 @@ namespace Source
                 Console.WriteLine();
                 Console.WriteLine("Type in the number of the challenge:");
 
-                string input = Console.ReadLine();
+                string? input = Console.ReadLine();
 
                 if (!int.TryParse(input, out number))
                 {
@@ -84,13 +72,13 @@ namespace Source
             // load the desired assembly
             Assembly externalAssembly = Assembly.LoadFrom("../Common/obj/Debug/net6.0/common.dll");
 
-            Type type = externalAssembly.GetType($"Common.LeetCode.{fileName}");
+            Type? type = externalAssembly.GetType($"Common.LeetCode.{fileName}");
             if (type == null) return null;
-            object instance = Activator.CreateInstance(type);
+            object? instance = Activator.CreateInstance(type);
 
-            PropertyInfo propertyInfo = type.GetProperty("CodeChallengeNumber");
+            PropertyInfo? propertyInfo = type.GetProperty("CodeChallengeNumber");
 
-            return propertyInfo.GetValue(instance);
+            return propertyInfo?.GetValue(instance);
         }
     }
 }
