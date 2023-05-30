@@ -16,14 +16,7 @@ namespace Source
                 var result = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
                 First(x => x.CodeChallengeSource == CodeChallengeSource.LeetCode && x.CodeChallengeNumber == number).Execute();
 
-                var concatResult = string.Empty;
-
-                // display results in console
-                foreach (var innerresult in result)
-                {
-                    concatResult = string.Join(", ", innerresult);
-                    Console.WriteLine(concatResult);
-                }
+                Console.WriteLine(result);
             }
         }
 
