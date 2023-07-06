@@ -8,8 +8,9 @@ Visual Studio Code
 ## Getting Started
 1. Clone this repository
 2. Open the project in Visual Studio Code
-3. Copy paste specific test into Program.cs
-4. Run the test by hitting Ctrl+F5
+3. When creating the launch.json set "console": "integratedTerminal" (this will allow to insert input parameters in the terminal console)
+4. Run with or without debugging
+5. Choose a challenge by typing in the number in the terminal and hit Enter
 
 ## Usage
 This repository is intended to be used for reference and learning purposes. You can view the code for each problem in the root directory.
