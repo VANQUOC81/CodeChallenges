@@ -63,7 +63,7 @@ namespace Source
         private static object? GetCodeChallengeNumber(string fileName)
         {
             // load the desired assembly
-            Assembly externalAssembly = Assembly.LoadFrom("../Common/obj/Debug/net6.0/common.dll");
+            Assembly externalAssembly = Assembly.LoadFrom("../Common/obj/Debug/net7.0/common.dll");
 
             Type? type = externalAssembly.GetType($"Common.LeetCode.{fileName}");
             if (type == null) return null;
