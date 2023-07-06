@@ -3,7 +3,7 @@ This is a collection of coding challenges I solved myself. It contains various p
 
 ## Prerequisites
 Visual Studio Code
-.NET 6.0 SDK
+.NET 7.0 SDK
 
 ## Getting Started
 1. Clone this repository
