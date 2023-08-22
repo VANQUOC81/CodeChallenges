@@ -16,7 +16,7 @@ namespace Source
                 var result = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
                 First(x => x.CodeChallengeSource == CodeChallengeSource.LeetCode && x.CodeChallengeNumber == number).Execute();
 
-                Console.WriteLine(result);
+                Console.WriteLine($"result: {result}");
             }
         }
 
