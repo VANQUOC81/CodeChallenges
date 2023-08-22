@@ -4,6 +4,7 @@ This is a collection of coding challenges I solved myself. It contains various p
 ## Prerequisites
 Visual Studio Code
 .NET 7.0 SDK
+.NET Core Test Explorer VS Code extension > File > Preferences > Extensions > Test Project Path > **/*Tests.csproj
 
 ## Getting Started
 1. Clone this repository
