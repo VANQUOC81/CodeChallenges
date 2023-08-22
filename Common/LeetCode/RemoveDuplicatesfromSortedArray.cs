@@ -12,8 +12,8 @@ namespace Common.LeetCode
         public string Execute()
         {
             // using in-place algorithm updates the passed in nums variable in Main scope.
-            //var nums = new[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
-            var nums = new[] { 1, 1, 2 };
+            var nums = new[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+            //var nums = new[] { 1, 1, 2 };
 
             return RemoveDuplicates(nums).ToString();
         }
