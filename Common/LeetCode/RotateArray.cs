@@ -1,6 +1,5 @@
 using Common.Interfaces;
 using Common.Enums;
-using System.Runtime.Intrinsics.Arm;
 
 namespace Common.LeetCode
 {
@@ -24,10 +23,10 @@ namespace Common.LeetCode
             // var nums = new int[] { 1, 2, 3, 4, 5, 6, 7 };
             // var k = 3;
 
-            var nums = new int[] { -1, -100, 3, 99 };
-            var k = 2;
+           // var nums = new int[] { -1, -100, 3, 99 };
+            //var k = 2;
 
-            return string.Join(",", Rotate(nums, k));
+            return string.Join(",", Rotate(_nums, _k));
         }
 
         public int[] Rotate(int[] nums, int k)
@@ -63,7 +62,7 @@ namespace Common.LeetCode
             return nums;
         }
 
-        public bool GetInputValuesCommands()
+        public void GetInputValuesCommands()
         {
             bool showCommand = true;
             while (showCommand)
@@ -86,18 +85,16 @@ namespace Common.LeetCode
                 Console.WriteLine("Provide k array rotation steps to the right, where k is non-negative:");
                 string? inputSteps = Console.ReadLine();
 
-                if (!int.TryParse(inputSteps, out _k) && _k > 0)
+                if (int.TryParse(inputSteps, out _k) && _k > 0)
+                {
+                    showCommand = false; 
+                }
+                else
                 {
                     Console.WriteLine($"Invalid {nameof(inputSteps)}: {inputSteps}");
                     continue;
                 }
-                else
-                {
-                    showCommand = false;
-                }
             }
-
-            return true;
         }
     }
 }

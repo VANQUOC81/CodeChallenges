@@ -64,5 +64,10 @@ namespace Common.LeetCode
             // Return -1 if the town judge doesn't exist or can't be identified
             return -1;
         }
+
+        public void GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

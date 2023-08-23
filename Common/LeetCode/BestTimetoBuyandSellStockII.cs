@@ -18,6 +18,11 @@ namespace Common.LeetCode
             return MaxProfit(prices).ToString();
         }
 
+        public void GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
+        }
+
         public int MaxProfit(int[] prices)
         {
             // find smallest price in input prices

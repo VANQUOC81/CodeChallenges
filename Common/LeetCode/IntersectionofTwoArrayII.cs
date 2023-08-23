@@ -16,6 +16,11 @@ namespace Common.LeetCode
             return string.Join(",", result);
         }
 
+        public void GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
+        }
+
         public int[] Intersect(int[] nums1, int[] nums2)
         {
             Dictionary<int, int> dict = new Dictionary<int, int>();

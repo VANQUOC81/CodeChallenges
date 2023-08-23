@@ -39,6 +39,11 @@ namespace Common.LeetCode
             return displayIntResultAsOneLine(result);
         }
 
+        public void GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
+        }
+
         // implementation performance is poor use Queue next time for traversal. 
         // See details Memory LeetCode of other submissions.  
         public int RangeSumBST(TreeNode root, int low, int high)

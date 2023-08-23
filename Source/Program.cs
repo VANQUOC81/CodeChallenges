@@ -13,8 +13,14 @@ namespace Source
             int number = ShowConsoleCommands();
             if (number != 0)
             {
-                var result = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
-                First(x => x.CodeChallengeSource == CodeChallengeSource.LeetCode && x.CodeChallengeNumber == number).Execute();
+                var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
+                First(x => x.CodeChallengeSource == CodeChallengeSource.LeetCode && x.CodeChallengeNumber == number);
+
+                // get input values
+                codeChallenge.GetInputValuesCommands();
+
+                // execute challenge
+                var result = codeChallenge.Execute();
 
                 Console.WriteLine($"result: {result}");
             }

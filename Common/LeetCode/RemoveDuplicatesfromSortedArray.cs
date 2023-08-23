@@ -18,6 +18,11 @@ namespace Common.LeetCode
             return RemoveDuplicates(nums).ToString();
         }
 
+        public void GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
+        }
+
         public int RemoveDuplicates(int[] nums)
         {
             var uniqueNumsToSwap = nums.Distinct().ToArray();

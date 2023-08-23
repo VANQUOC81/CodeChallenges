@@ -2,7 +2,7 @@ using Common.Enums;
 
 namespace Common.Interfaces
 {
-    public interface ICodeChallenge
+    public interface ICodeChallenge : IInputValues
     {
         CodeChallengeSource CodeChallengeSource { get; }
 

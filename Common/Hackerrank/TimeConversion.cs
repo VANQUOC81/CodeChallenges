@@ -32,5 +32,10 @@ namespace Common.Hackerrank
 
             return t.ToString("HH:mm:ss");
         }
+
+        public void GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

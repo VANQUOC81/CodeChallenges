@@ -17,6 +17,11 @@ namespace Common.LeetCode
             return MinOperations(input).ToString();
         }
 
+        public void GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
+        }
+
         public int MinOperations(int[] nums)
         {
             int count = 0;
