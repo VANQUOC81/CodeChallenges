@@ -8,6 +8,7 @@ namespace Common.Interfaces
 
         int CodeChallengeNumber { get; }
 
+        // executes with input parameters identical to examples
         string Execute();
     }
 }
