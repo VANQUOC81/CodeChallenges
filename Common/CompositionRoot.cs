@@ -19,7 +19,8 @@ public static class CompositionRoot
         services.AddSingleton<ICodeChallenge, RangeSumofBST>();
         services.AddSingleton<ICodeChallenge, RemoveDuplicatesfromSortedArray>();
         services.AddSingleton<ICodeChallenge, RomanToInteger>();
-
+        services.AddSingleton<ICodeChallenge, RotateArray>();
+        
         return services;
     }
 }
