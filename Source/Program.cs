@@ -22,6 +22,7 @@ namespace Source
                 // execute challenge
                 var result = codeChallenge.Execute();
 
+                // display result
                 Console.WriteLine($"result: {result}");
             }
         }

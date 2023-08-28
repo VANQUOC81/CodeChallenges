@@ -9,24 +9,12 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 189;
 
-        public int k;
+        public int k = 0;
         
-        public int[] nums;
-
-        public RotateArray()
-        {
-            k = 0;
-            nums = new int[] { };
-        }
+        public int[] nums = new int[] {};
 
         public string Execute()
         {
-            // var nums = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-            // var k = 3;
-
-           // var nums = new int[] { -1, -100, 3, 99 };
-            //var k = 2;
-
             return string.Join(",", Rotate(nums, k));
         }
 
