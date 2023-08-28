@@ -9,13 +9,14 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 189;
 
-        private int _k;
-        private int[] _nums;
+        public int k;
+        
+        public int[] nums;
 
         public RotateArray()
         {
-            _k = 0;
-            _nums = new int[] { };
+            k = 0;
+            nums = new int[] { };
         }
 
         public string Execute()
@@ -26,7 +27,7 @@ namespace Common.LeetCode
            // var nums = new int[] { -1, -100, 3, 99 };
             //var k = 2;
 
-            return string.Join(",", Rotate(_nums, _k));
+            return string.Join(",", Rotate(nums, k));
         }
 
         public int[] Rotate(int[] nums, int k)
@@ -73,7 +74,7 @@ namespace Common.LeetCode
 
                 if (inputArray is not null)
                 {
-                    _nums = inputArray.Split(',').Select(s => s.Trim())         // Remove spaces
+                    nums = inputArray.Split(',').Select(s => s.Trim())         // Remove spaces
                             .Where(s => !string.IsNullOrWhiteSpace(s)) // Exclude empty strings
                             .Select(int.Parse).ToArray();
                 }
@@ -85,7 +86,7 @@ namespace Common.LeetCode
                 Console.WriteLine("Provide k array rotation steps to the right, where k is non-negative:");
                 string? inputSteps = Console.ReadLine();
 
-                if (int.TryParse(inputSteps, out _k) && _k > 0)
+                if (int.TryParse(inputSteps, out k) && k > 0)
                 {
                     showCommand = false; 
                 }
