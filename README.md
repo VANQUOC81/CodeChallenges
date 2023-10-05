@@ -1,6 +1,9 @@
 ﻿# My Coding Challenges
 This is a collection of coding challenges I solved myself. It contains various problems from LeetCode and Hackerrank written in C#.
 
+## TODO
+* create test for hankerrank. Leetcode is done.
+
 ## Prerequisites
 Visual Studio Code
 .NET 7.0 SDK
