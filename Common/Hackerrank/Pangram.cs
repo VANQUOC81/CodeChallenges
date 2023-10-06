@@ -1,70 +1,57 @@
-// using System.CodeDom.Compiler;
-// using System.Collections.Generic;
-// using System.Collections;
-// using System.ComponentModel;
-// using System.Diagnostics.CodeAnalysis;
-// using System.Globalization;
-// using System.IO;
-// using System.Linq;
-// using System.Reflection;
-// using System.Runtime.Serialization;
-// using System.Text.RegularExpressions;
-// using System.Text;
-// using System;
+using Common.Enums;
+using Common.Interfaces;
 
-// class Result
-// {
+namespace Common.Hackerrank;
 
-//     /*
-//      * Complete the 'pangrams' function below.
-//      *
-//      * The function is expected to return a STRING.
-//      * The function accepts STRING s as parameter.
-//      */
+public class Pangram : ICodeChallenge
+{
+    public CodeChallengeSource CodeChallengeSource => CodeChallengeSource.Hankerrank;
 
-//     public static string pangrams(string s)
-//     {
-//         string noSpaces = s.Replace(" ", string.Empty).ToLowerInvariant();
-//         var listChars = noSpaces.Distinct().ToList();
+    public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-//         var abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToLowerInvariant().ToList();
-//         var abcCount = abc.Count;
+    /*
+     * Complete the 'GetPangrams' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING s as parameter.
+     */
 
-//         int count = 0;
-//         foreach (char c in listChars)
-//         {
-//             if (abc.Contains(c))
-//             {
-//                 count++;
-//             }
-//         }
+    public string Execute()
+    {
+        string s = "We promptly judged antique ivory buckles for the prize";
 
-//         if (count.Equals(abcCount))
-//         {
-//             return "pangram";
-//         }
-//         else
-//         {
-//             return "not pangram";
-//         }
-//     }
-// }
+        return GetPangrams(s);
+    }
 
-// class Solution
-// {
-//     public static void Main(string[] args)
-//     {
-//         // ?TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+    public static string GetPangrams(string s)
+    {
+        string noSpaces = s.Replace(" ", string.Empty).ToLowerInvariant();
+        var listChars = noSpaces.Distinct().ToList();
 
-//         string s = "We promptly judged antique ivory buckles for the prize";
+        var abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToLowerInvariant().ToList();
+        var abcCount = abc.Count;
 
-//         string result = Result.pangrams(s);
+        int count = 0;
+        foreach (char c in listChars)
+        {
+            if (abc.Contains(c))
+            {
+                count++;
+            }
+        }
 
-//         Console.WriteLine(result);
+        if (count.Equals(abcCount))
+        {
+            return "pangram";
+        }
+        else
+        {
+            return "not pangram";
+        }
+    }
 
-//         // textWriter.WriteLine(result);
-
-//         // textWriter.Flush();
-//         // textWriter.Close();
-//     }
-// }
+    public void GetInputValuesCommands()
+    {
+        throw new NotImplementedException();
+    }
+}
