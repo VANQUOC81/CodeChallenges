@@ -2,7 +2,7 @@
 This is a collection of coding challenges I solved myself. It contains various problems from LeetCode and Hackerrank written in C#.
 
 ## TODO
-* create test for hankerrank. Leetcode is done.
+* create test for hankerrank.
 
 ## Prerequisites
 Visual Studio Code
