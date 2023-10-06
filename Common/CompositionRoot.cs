@@ -15,6 +15,7 @@ public static class CompositionRoot
         services.AddSingleton<ICodeChallenge, IntersectionofTwoArrayII>();
         services.AddSingleton<ICodeChallenge, FindTheTownJudge>();
         services.AddSingleton<ICodeChallenge, MinimumOperationsToMakeTheArrayIncreasing>();
+        services.AddSingleton<ICodeChallenge, Pangram>();
         services.AddSingleton<ICodeChallenge, ThreeSum>();
         services.AddSingleton<ICodeChallenge, RangeSumofBST>();
         services.AddSingleton<ICodeChallenge, RemoveDuplicatesfromSortedArray>();
