@@ -21,6 +21,7 @@ public static class CompositionRoot
         services.AddSingleton<ICodeChallenge, RemoveDuplicatesfromSortedArray>();
         services.AddSingleton<ICodeChallenge, RomanToInteger>();
         services.AddSingleton<ICodeChallenge, RotateArray>();
+        services.AddSingleton<ICodeChallenge, SparseArrays>();
         
         return services;
     }
