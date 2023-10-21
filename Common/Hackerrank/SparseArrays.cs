@@ -1,83 +1,62 @@
-// using System.Runtime.CompilerServices;
-// using System.CodeDom.Compiler;
-// using System.Collections.Generic;
-// using System.Collections;
-// using System.ComponentModel;
-// using System.Diagnostics.CodeAnalysis;
-// using System.Globalization;
-// using System.IO;
-// using System.Linq;
-// using System.Reflection;
-// using System.Runtime.Serialization;
-// using System.Text.RegularExpressions;
-// using System.Text;
-// using System;
+using Common.Enums;
+using Common.Interfaces;
 
-// class Result
-// {
+namespace Common.Hackerrank
+{
+    public class SparseArrays : ICodeChallenge
+    {
+        public CodeChallengeSource CodeChallengeSource => CodeChallengeSource.Hankerrank;
 
-//     /*
-//      * Complete the 'matchingStrings' function below.
-//      *
-//      * The function is expected to return an INTEGER_ARRAY.
-//      * The function accepts following parameters:
-//      *  1. STRING_ARRAY strings
-//      *  2. STRING_ARRAY queries
-//      */
+        public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-//     public static List<int> matchingStrings(List<string> strings, List<string> queries)
-//     {
-//         var result = new List<int>();
+        public string Execute()
+        {
+            int stringsCount = Convert.ToInt32("4");
 
-//         foreach (var item in queries)
-//         {
-//             var matchResult = strings.Where(x => x == item);
-            
-//             result.Add(matchResult.Count());
-//         }
+            List<string> strings = new List<string>();
+            strings.Add("aba");
+            strings.Add("baba");
+            strings.Add("aba");
+            strings.Add("xzxb");
 
-//         return result;
-//     }
+            int queriesCount = Convert.ToInt32("3");
 
-//     class Solution
-//     {
-//         public static void Main(string[] args)
-//         {
-//             // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+            List<string> queries = new List<string>();
+            queries.Add("aba");
+            queries.Add("xzxb");
+            queries.Add("ab");
 
-//             int stringsCount = Convert.ToInt32("4");
+            List<int> result = MatchingStrings(strings, queries);
+            Console.Write(string.Join(",", result));
 
-//             List<string> strings = new List<string>();
-//             strings.Add("aba");
-//             strings.Add("baba");
-//             strings.Add("aba");
-//             strings.Add("xzxb");
+            return string.Join(",", result);
+        }
 
-//             // for (int i = 0; i < stringsCount; i++)
-//             // {
-//             //     string stringsItem = Console.ReadLine();
-//             //     strings.Add(stringsItem);
-//             // }
+        /*
+         * Complete the 'matchingStrings' function below.
+         *
+         * The function is expected to return an INTEGER_ARRAY.
+         * The function accepts following parameters:
+         *  1. STRING_ARRAY strings
+         *  2. STRING_ARRAY queries
+         */
+        public static List<int> MatchingStrings(List<string> strings, List<string> queries)
+        {
+            var result = new List<int>();
 
-//             int queriesCount = Convert.ToInt32("3");
+            foreach (var item in queries)
+            {
+                var matchResult = strings.Where(x => x == item);
 
-//             List<string> queries = new List<string>();
-//             queries.Add("aba");
-//             queries.Add("xzxb");
-//             queries.Add("ab");
+                result.Add(matchResult.Count());
+            }
 
-//             // for (int i = 0; i < queriesCount; i++)
-//             // {
-//             //     string queriesItem = Console.ReadLine();
-//             //     queries.Add(queriesItem);
-//             // }
+            return result;
+        }
 
-//             List<int> res = Result.matchingStrings(strings, queries);
-//             Console.Write(string.Join(",", res));
-//             //     textWriter.WriteLine(String.Join("\n", res));
-
-//             //     textWriter.Flush();
-//             //     textWriter.Close();
-//         }
-//     }
-// }
+        public void GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
