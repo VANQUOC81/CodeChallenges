@@ -10,7 +10,7 @@ namespace CodeChallenges.Tests.Hackerrank
         {
             // Arrange
             var codeChallenge = new Pangram();
-            const string expected = "";
+            const string expected = "not pangram";
 
             // Act
             var actual = codeChallenge.Execute();
