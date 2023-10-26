@@ -1,78 +1,73 @@
-using System.Collections;
+using Common.Enums;
+using Common.Interfaces;
 
-// namespace CalPoints
-// {
-//     class Solution
-//     {
-//         public int CalPoints(string[] ops)
-//         {
-//             var opsList = new List<string>();
-//             var sum = 0;
+namespace Common.Hackerrank;
 
-//             foreach (var item in ops)
-//             {
-//                 if (item.Equals("+"))
-//                 {
-//                     var index = int.Parse(opsList[opsList.Count - 1]) + int.Parse(opsList[opsList.Count - 2]);
-//                     opsList.Add(index.ToString());
+public class CalPoints : ICodeChallenge
+{
+    public CodeChallengeSource CodeChallengeSource => CodeChallengeSource.Hankerrank;
 
-//                     sum = CalculateSum(opsList);
-//                 }
-//                 else if (item.Equals("D"))
-//                 {
-//                     var index = int.Parse(opsList[opsList.Count - 1]) * 2;
-//                     opsList.Add(index.ToString());
+    public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-//                     sum = CalculateSum(opsList);
-//                 }
-//                 else if (item.Equals("C"))
-//                 {
-//                     opsList.RemoveAt(opsList.Count - 1);
+    public string Execute()
+    {
+        string[] ops = { "1", "+", "2" };
 
-//                     sum = CalculateSum(opsList);
-//                 }
-//                 else
-//                 {
-//                     //An integer was added
-//                     opsList.Add(item);
+        return GetCalPoints(ops).ToString();
+    }
 
-//                     sum = CalculateSum(opsList);
-//                 }
+    public int GetCalPoints(string[] ops)
+    {
+        var opsList = new List<string>();
+        var sum = 0;
 
-//             }
+        foreach (var item in ops)
+        {
+            if (item.Equals("+"))
+            {
+                var index = int.Parse(opsList[opsList.Count - 1]) + int.Parse(opsList[opsList.Count - 2]);
+                opsList.Add(index.ToString());
 
-//             return sum;
-//         }
-//         private int CalculateSum(List<string> opsList)
-//         {
-//             int sum = 0;
+                sum = CalculateSum(opsList);
+            }
+            else if (item.Equals("D"))
+            {
+                var index = int.Parse(opsList[opsList.Count - 1]) * 2;
+                opsList.Add(index.ToString());
 
-//             foreach (var val in opsList)
-//             {
-//                 sum += int.Parse(val);
-//             }
+                sum = CalculateSum(opsList);
+            }
+            else if (item.Equals("C"))
+            {
+                opsList.RemoveAt(opsList.Count - 1);
 
-//             return sum;
-//         }
-//     }
+                sum = CalculateSum(opsList);
+            }
+            else
+            {
+                //An integer was added
+                opsList.Add(item);
 
-    // class CalPoints
-    // {
-        // private static void Main(string[] args)
-        // {
-        //     ArrayList array = new ArrayList();
-        //     int element1 = 7;
-        //     int element2;
-        //     array.Add(element1);
-        //     element2 = (int)array[0];
+                sum = CalculateSum(opsList);
+            }
+        }
 
+        return sum;
+    }
+    private int CalculateSum(List<string> opsList)
+    {
+        int sum = 0;
 
-        //     var solution = new Solution();
-        //     var space = new char[] { ' ' };
+        foreach (var val in opsList)
+        {
+            sum += int.Parse(val);
+        }
 
-        //     string[] ops = Console.ReadLine().Split(space);
-        //     int output = solution.CalPoints(ops);
-        //     Console.Write(output.ToString());
-        // }
-//     }
-// }
+        return sum;
+    }
+
+    public void GetInputValuesCommands()
+    {
+        throw new NotImplementedException();
+    }
+}
