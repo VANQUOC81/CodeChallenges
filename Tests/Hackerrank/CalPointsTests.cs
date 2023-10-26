@@ -3,14 +3,14 @@ using Common.Hackerrank;
 namespace CodeChallenges.Tests.Hackerrank
 {
     [TestClass]
-    public class PangramTests
+    public class CalPointsTests
     {
         [TestMethod]
-        public void GetPangram_String_ReturnsPangram()
+        public void GetCalPoints_ArrayString_ReturnsCalPoints()
         {
             // Arrange
-            var codeChallenge = new Pangram();
-            const string expected = "not pangram";
+            var codeChallenge = new CalPoints();
+            const string expected = "need to fix";
 
             // Act
             var actual = codeChallenge.Execute();
