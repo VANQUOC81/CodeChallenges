@@ -6,7 +6,7 @@ namespace Common.Hackerrank;
 public class LonelyInteger : ICodeChallenge
 {
     public CodeChallengeSource CodeChallengeSource => CodeChallengeSource.Hankerrank;
-
+    
     public int CodeChallengeNumber => throw new NotImplementedException();
 
     /*
