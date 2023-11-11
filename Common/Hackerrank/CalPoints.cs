@@ -11,56 +11,42 @@ public class CalPoints : ICodeChallenge
 
     public string Execute()
     {
-        string[] ops = { "1", "+", "2" };
+        string[] ops = {"5", "-2", "4", "C", "D", "9", "+", "+"};
 
         return GetCalPoints(ops).ToString();
     }
 
     public int GetCalPoints(string[] ops)
     {
-        var opsList = new List<string>();
-        var sum = 0;
+        Stack<int> stack = new Stack<int>();
 
-        foreach (var item in ops)
+        foreach (string op in ops)
         {
-            if (item.Equals("+"))
+            if (int.TryParse(op, out int num))
             {
-                var index = int.Parse(opsList[opsList.Count - 1]) + int.Parse(opsList[opsList.Count - 2]);
-                opsList.Add(index.ToString());
-
-                sum = CalculateSum(opsList);
+                stack.Push(num);
             }
-            else if (item.Equals("D"))
+            else if (op == "+")
             {
-                var index = int.Parse(opsList[opsList.Count - 1]) * 2;
-                opsList.Add(index.ToString());
-
-                sum = CalculateSum(opsList);
+                int last = stack.Pop();
+                int secondLast = stack.Peek();
+                stack.Push(last);
+                stack.Push(last + secondLast);
             }
-            else if (item.Equals("C"))
+            else if (op == "D")
             {
-                opsList.RemoveAt(opsList.Count - 1);
-
-                sum = CalculateSum(opsList);
+                stack.Push(2 * stack.Peek());
             }
-            else
+            else if (op == "C")
             {
-                //An integer was added
-                opsList.Add(item);
-
-                sum = CalculateSum(opsList);
+                stack.Pop();
             }
         }
 
-        return sum;
-    }
-    private int CalculateSum(List<string> opsList)
-    {
         int sum = 0;
-
-        foreach (var val in opsList)
+        while (stack.Count > 0)
         {
-            sum += int.Parse(val);
+            sum += stack.Pop();
         }
 
         return sum;
