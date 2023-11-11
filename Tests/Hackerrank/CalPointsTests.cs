@@ -10,7 +10,7 @@ namespace CodeChallenges.Tests.Hackerrank
         {
             // Arrange
             var codeChallenge = new CalPoints();
-            const string expected = "need to fix";
+            const string expected = "27";
 
             // Act
             var actual = codeChallenge.Execute();
