@@ -25,16 +25,16 @@ public class DiagonalDifference : ICodeChallenge
         return result.ToString();
     }
 
-/*
-     * Complete the 'GetDiagonalDifference' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts 2D_INTEGER_ARRAY arr as parameter.
-     */
+    /*
+         * Complete the 'GetDiagonalDifference' function below.
+         *
+         * The function is expected to return an INTEGER.
+         * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+         */
 
     public static int GetDiagonalDifference(List<List<int>> arr)
     {
-int primarySum = 0;
+        int primarySum = 0;
         int secondarySum = 0;
 
         int n = arr.Count;
