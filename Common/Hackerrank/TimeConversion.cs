@@ -11,9 +11,8 @@ namespace Common.Hackerrank
 
         public string Execute()
         {
-            const string s = "07:05:45PM";
-
-            return  ConvertTime(s);
+            // Calling function and return
+            return ConvertTime("07:05:45PM");
         }
 
         /*
@@ -25,10 +24,7 @@ namespace Common.Hackerrank
 
         public static string ConvertTime(string s)
         {
-            // solution
-            var t = DateTime.Parse(s);
-
-            return t.ToString("HH:mm:ss");
+            return DateTime.Parse(s).ToString("HH:mm:ss");
         }
 
         public void GetInputValuesCommands()

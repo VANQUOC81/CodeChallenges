@@ -14,10 +14,8 @@ public class CountingSort1 : ICodeChallenge
         // Sample input
         List<int> inputList = new() { 63, 25, 73, 1, 98, 73, 56, 84 /* add your elements here */ };
 
-        // Calling counting sort function
-        List<int> result = CountingSort(inputList);
-
-        return string.Join(",", result);
+        // Calling counting sort function and return
+        return string.Join(",", CountingSort(inputList));
     }
 
     /*

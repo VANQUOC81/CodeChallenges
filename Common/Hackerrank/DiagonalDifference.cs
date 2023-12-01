@@ -19,10 +19,8 @@ public class DiagonalDifference : ICodeChallenge
             new List<int>() { 10, 8, -12 }
         };
 
-        // Calling function
-        var result = GetDiagonalDifference(inputList);
-
-        return result.ToString();
+        // Calling function and return
+        return GetDiagonalDifference(inputList).ToString();
     }
 
     /*
