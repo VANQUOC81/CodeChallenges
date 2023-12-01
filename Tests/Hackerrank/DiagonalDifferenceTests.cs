@@ -3,20 +3,20 @@ using Common.Hackerrank;
 namespace CodeChallenges.Tests.Hackerrank
 {
     [TestClass]
-    public class CountingSortTests
+    public class DiagonalDifferenceTests
     {
         [TestMethod]
-        public void CountingSort_ListInt_ReturnsCountFrequency()
+        public void DiagonalDifference_ListofListInt_ReturnsDiagonalDifference()
         {
             // Arrange
-            var codeChallenge = new CountingSort1();
-            const string expected = "0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0";
+            var codeChallenge = new DiagonalDifference();
+            const string expected = "15";
 
             // Act
             var actual = codeChallenge.Execute();
 
             // Assert
-            Assert.AreEqual(expected, actual);
+             Assert.AreEqual(expected, actual);
         }
     }
 }
