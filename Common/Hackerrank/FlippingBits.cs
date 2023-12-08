@@ -12,27 +12,25 @@ public class FlippingBits : ICodeChallenge
     public string Execute()
     {
         // Sample input
-        List<List<int>> inputList = new()
-        {
-            new List<int>() { 11, 2, 4 },
-            new List<int>() { 4, 5, 6 },
-            new List<int>() { 10, 8, -12 }
-        };
+        long input = 2147483647; // Example input value
 
         // Calling function and return
-        return GetFlippingBits(inputList).ToString();
+        return GetFlippingBits(input).ToString();
     }
 
-/*
-     * Complete the 'GetFlippingBits' function below.
-     *
-     * The function is expected to return a LONG_INTEGER.
-     * The function accepts LONG_INTEGER n as parameter.
-     */
+    /*
+         * Complete the 'GetFlippingBits' function below.
+         *
+         * The function is expected to return a LONG_INTEGER.
+         * The function accepts LONG_INTEGER n as parameter.
+         */
 
     public static long GetFlippingBits(long n)
     {
+        long maxInt = (1L << 32) - 1; // Maximum value for 32-bit unsigned integer
 
+        // XOR operation with maxUInt (all bits set to 1 for 32-bit) flips all bits
+        return n ^ maxInt;
     }
 
     public void GetInputValuesCommands()
