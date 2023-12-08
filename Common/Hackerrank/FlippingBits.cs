@@ -3,7 +3,7 @@ using Common.Interfaces;
 
 namespace Common.Hackerrank;
 
-public class DiagonalDifference : ICodeChallenge
+public class FlippingBits : ICodeChallenge
 {
     public CodeChallengeSource CodeChallengeSource => CodeChallengeSource.Hankerrank;
 
@@ -20,30 +20,19 @@ public class DiagonalDifference : ICodeChallenge
         };
 
         // Calling function and return
-        return GetDiagonalDifference(inputList).ToString();
+        return GetFlippingBits(inputList).ToString();
     }
 
-    /*
-         * Complete the 'GetDiagonalDifference' function below.
-         *
-         * The function is expected to return an INTEGER.
-         * The function accepts 2D_INTEGER_ARRAY arr as parameter.
-         */
+/*
+     * Complete the 'GetFlippingBits' function below.
+     *
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts LONG_INTEGER n as parameter.
+     */
 
-    public static int GetDiagonalDifference(List<List<int>> arr)
+    public static long GetFlippingBits(long n)
     {
-        int primarySum = 0;
-        int secondarySum = 0;
 
-        int n = arr.Count;
-
-        for (int i = 0; i < n; i++)
-        {
-            primarySum += arr[i][i];
-            secondarySum += arr[i][n - i - 1];
-        }
-
-        return Math.Abs(primarySum - secondarySum);
     }
 
     public void GetInputValuesCommands()
