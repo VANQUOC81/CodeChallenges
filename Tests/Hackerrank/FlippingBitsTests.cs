@@ -6,11 +6,11 @@ namespace CodeChallenges.Tests.Hackerrank
     public class FlippingBitsTests
     {
         [TestMethod]
-        public void CountingSort_ListInt_ReturnsCountFrequency()
+        public void FlippingBits_LongValue_ReturnsFlippedBitsLongValue()
         {
             // Arrange
             var codeChallenge = new FlippingBits();
-            const string expected = "";
+            const string expected = "2147483648";
 
             // Act
             var actual = codeChallenge.Execute();
