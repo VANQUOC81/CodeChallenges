@@ -19,11 +19,11 @@ public class FlippingBits : ICodeChallenge
     }
 
     /*
-         * Complete the 'GetFlippingBits' function below.
-         *
-         * The function is expected to return a LONG_INTEGER.
-         * The function accepts LONG_INTEGER n as parameter.
-         */
+     * Complete the 'GetFlippingBits' function below.
+     *
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts LONG_INTEGER n as parameter.
+     */
 
     public static long GetFlippingBits(long n)
     {
