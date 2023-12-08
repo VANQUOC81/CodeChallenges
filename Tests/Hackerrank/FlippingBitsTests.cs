@@ -9,8 +9,8 @@ namespace CodeChallenges.Tests.Hackerrank
         public void CountingSort_ListInt_ReturnsCountFrequency()
         {
             // Arrange
-            var codeChallenge = new CountingSort1();
-            const string expected = "0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0";
+            var codeChallenge = new FlippingBits();
+            const string expected = "";
 
             // Act
             var actual = codeChallenge.Execute();
