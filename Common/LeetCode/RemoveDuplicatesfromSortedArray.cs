@@ -36,11 +36,6 @@ namespace Common.LeetCode
 
                 // replacement array value
                 nums[j] = uniqueNumsToSwap[j];
-
-                //         // swap current with next using temp variable (allowed with in-place algo)                   
-                //         var temp = nums[j];
-                //         nums[j] = nums[j + 1];
-                //         nums[j + 1] = temp;   
             }
 
             return uniqueNumsToSwap.Count();
