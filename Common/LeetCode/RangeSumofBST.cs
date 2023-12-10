@@ -12,14 +12,28 @@ namespace Common.LeetCode
         public string Execute()
         {
             // Arrange
-            var node7 = new TreeNode(7);
-            var node3 = new TreeNode(3);
-            var node5 = new TreeNode(5, node3, node7);
-            var node18 = new TreeNode(18);
-            var node15 = new TreeNode(15, null!, node18);
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+            var node7 = new TreeNode(null, null, 7);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+            var node3 = new TreeNode(null, null, 3);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
+            var node5 = new TreeNode(node3, node7, 5);
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+            var node18 = new TreeNode(null, null, 18);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+            var node15 = new TreeNode(null, node18, 15);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 
             // root node
-            var node10 = new TreeNode(10, node5, node15);
+            var node10 = new TreeNode(node5, node15, 10);
 
             int result = RangeSumBST(node10, 7, 15);
 
@@ -92,7 +106,7 @@ namespace Common.LeetCode
             public int val;
             public TreeNode left;
             public TreeNode right;
-            public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
+            public TreeNode(TreeNode left, TreeNode right, int val = 0)
             {
                 this.val = val;
                 this.left = left;
