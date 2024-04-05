@@ -2,7 +2,7 @@ using System.Globalization;
 using Common.Enums;
 using Common.Interfaces;
 
-namespace Common.Hackerrank;
+namespace Common.Snippets;
 
 public class RoundingDirectionNearestLargerInteger : ICodeChallenge
 {
