@@ -42,6 +42,8 @@ namespace Source
                 if (string.IsNullOrWhiteSpace(source) || !challengeSources.Contains(source))
                 {
                     Console.WriteLine($"Invalid input: {source}");
+
+                    continue;
                 }
 
                 string folderPath = $@"{Directory.GetCurrentDirectory()}\..\Common\{source}";
