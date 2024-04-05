@@ -14,7 +14,7 @@ namespace Source
             if (number != 0)
             {
                 var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
-                First(x => x.CodeChallengeSource == CodeChallengeSource.LeetCode && x.CodeChallengeNumber == number);
+                First(x => x.CodeChallengeSource == CodeChallengeSource.Snippets && x.CodeChallengeNumber == number);
 
                 // get input values
                 codeChallenge.GetInputValuesCommands();

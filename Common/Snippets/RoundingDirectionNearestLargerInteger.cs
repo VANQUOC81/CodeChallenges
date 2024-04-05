@@ -8,7 +8,7 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
 {
     public CodeChallengeSource CodeChallengeSource => CodeChallengeSource.Snippets;
 
-    public int CodeChallengeNumber => throw new NotImplementedException("Snippets doesn't have numbers");
+    public int CodeChallengeNumber => 1;
 
     /*
         rounding where positive numbers are rounded up to the nearest larger integer and 
