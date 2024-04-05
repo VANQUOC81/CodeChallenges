@@ -29,22 +29,32 @@ namespace Source
 
         private static int ShowConsoleCommands()
         {
+            var challengeSources = new string []{"LeetCode", "Hackerrank", "Snippets"}; 
             bool showCommand = true;
             int number = default;
             while (showCommand)
             {
                 // show command prompts.
-                string folderPath = $@"{Directory.GetCurrentDirectory()}\..\Common\LeetCode";
+                Console.WriteLine("Type in the challenge source:");
+
+                string? source = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(source) || !challengeSources.Contains(source))
+                {
+                    Console.WriteLine($"Invalid input: {source}");
+                }
+
+                string folderPath = $@"{Directory.GetCurrentDirectory()}\..\Common\{source}";
                 string[] files = Directory.GetFiles(folderPath, "*.cs");
 
-                Console.WriteLine("List of LeetCode Code Challenges:");
+                Console.WriteLine($"List of {source} Code Challenges:");
                 Console.WriteLine();
                 foreach (string file in files)
                 {
                     // get filename without extension
                     string fileName = Path.GetFileNameWithoutExtension(file);
 
-                    var CodeChallengeNumber = GetCodeChallengeNumber(fileName);
+                    var CodeChallengeNumber = GetCodeChallengeNumber(fileName, source);
                     if (CodeChallengeNumber == null) continue;
                     Console.WriteLine($"{fileName}: {CodeChallengeNumber}");
                 }
@@ -67,12 +77,12 @@ namespace Source
             return number;
         }
 
-        private static object? GetCodeChallengeNumber(string fileName)
+        private static object? GetCodeChallengeNumber(string fileName, string? source)
         {
             // load the desired assembly
             Assembly externalAssembly = Assembly.LoadFrom("../Common/obj/Debug/net7.0/common.dll");
 
-            Type? type = externalAssembly.GetType($"Common.LeetCode.{fileName}");
+            Type? type = externalAssembly.GetType($"Common.{source}.{fileName}");
             if (type == null) return null;
             object? instance = Activator.CreateInstance(type);
 
