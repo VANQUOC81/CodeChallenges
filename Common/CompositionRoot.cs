@@ -18,6 +18,7 @@ public static class CompositionRoot
         services.AddSingleton<ICodeChallenge, Pangram>();
         services.AddSingleton<ICodeChallenge, ThreeSum>();
         services.AddSingleton<ICodeChallenge, RangeSumofBST>();
+        services.AddSingleton<ICodeChallenge, RoundingDirectionNearestLargerInteger>();
         services.AddSingleton<ICodeChallenge, RemoveDuplicatesfromSortedArray>();
         services.AddSingleton<ICodeChallenge, RomanToInteger>();
         services.AddSingleton<ICodeChallenge, RotateArray>();
