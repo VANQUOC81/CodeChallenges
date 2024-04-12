@@ -14,11 +14,12 @@ namespace Source
             if (number != 0)
             {
                 var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
+                
                 // TODO return tuple with CodeChallengeSource
                 First(x => x.CodeChallengeSource == CodeChallengeSource.Snippets && x.CodeChallengeNumber == number);
 
                 // get input values Why do you have this here?
-                //codeChallenge.GetInputValuesCommands();
+                codeChallenge.GetInputValuesCommands();
 
                 // execute challenge
                 var result = codeChallenge.Execute();
