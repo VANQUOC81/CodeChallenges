@@ -27,8 +27,17 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
         // Check if the value is negative
         if (value < 0)
         {
-            // For negative numbers, round down to the nearest integer
-            return Math.Ceiling(value);
+            // Check if the absolute value is a midpoint (e.g., -4.5)
+            if (Math.Abs(value) - Math.Floor(Math.Abs(value)) == 0.5m)
+            {
+                // If it's a midpoint, round up to the nearest larger integer
+                return Math.Floor(value);
+            }
+            else
+            {
+                // Otherwise, round down to the nearest integer
+                return Math.Ceiling(value);
+            }
         }
         else
         {
