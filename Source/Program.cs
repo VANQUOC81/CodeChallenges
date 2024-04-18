@@ -10,17 +10,17 @@ namespace Source
         public static void Main()
         {
             // show options
-            (string source, int number) = ShowConsoleCommands();
+            (string challengeSource, int number) = ShowConsoleCommands();
 
             if (number != 0)
             {
                 var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>()
-                .First(x => x.CodeChallengeSource == GetCodeChallengeSourceEnum(source) && x.CodeChallengeNumber == number);
+                .First(x => x.CodeChallengeSource == GetCodeChallengeSourceEnum(challengeSource) && x.CodeChallengeNumber == number);
 
                 // get input values Why do you have this here?
                 string input = codeChallenge.GetInputValuesCommands();
 
-                // execute challenge
+                // TODO pass in input to execute challenge
                 var result = codeChallenge.Execute();
 
                 // display result
@@ -28,12 +28,13 @@ namespace Source
             }
         }
 
-        private static (string source, int codeChallengeNumber) ShowConsoleCommands()
+        private static (string challengeSource, int codeChallengeNumber) ShowConsoleCommands()
         {
             var challengeSources = new string[] { "LeetCode", "Hackerrank", "Snippets" };
             bool showCommand = true;
             int number = default;
             string source = string.Empty;
+            string challengeSource= string.Empty;
             while (showCommand)
             {
                 // show command prompts.
@@ -41,24 +42,26 @@ namespace Source
 
                 source = Console.ReadLine() ?? string.Empty;
 
-                if (string.IsNullOrWhiteSpace(source) || !challengeSources.Contains(source))
+                if (string.IsNullOrWhiteSpace(source) || !challengeSources.Select(x => x.ToLower()).Contains(source.ToLower()))
                 {
                     Console.WriteLine($"Invalid input: {source}");
 
                     continue;
                 }
 
-                string folderPath = $@"{Directory.GetCurrentDirectory()}\..\Common\{source}";
+                challengeSource = challengeSources.Where(c => c.ToLower() == source.ToLower()).Single();
+
+                string folderPath = $@"{Directory.GetCurrentDirectory()}\..\Common\{challengeSource}";
                 string[] files = Directory.GetFiles(folderPath, "*.cs");
 
-                Console.WriteLine($"List of {source} Code Challenges:");
+                Console.WriteLine($"List of {challengeSource} Code Challenges:");
                 Console.WriteLine();
                 foreach (string file in files)
                 {
                     // get filename without extension
                     string fileName = Path.GetFileNameWithoutExtension(file);
 
-                    var CodeChallengeNumber = GetCodeChallengeNumber(fileName, source);
+                    var CodeChallengeNumber = GetCodeChallengeNumber(fileName, challengeSource);
                     if (CodeChallengeNumber == null) continue;
                     Console.WriteLine($"{fileName}: {CodeChallengeNumber}");
                 }
@@ -78,7 +81,7 @@ namespace Source
                 }
             }
 
-            return (source, number);
+            return (challengeSource, number);
         }
 
         private static object? GetCodeChallengeNumber(string fileName, string source)
