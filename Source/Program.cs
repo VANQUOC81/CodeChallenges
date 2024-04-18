@@ -2,6 +2,8 @@
 using Common.Enums;
 using System.Reflection;
 using Source.Factories;
+using System.ComponentModel;
+using System.Collections;
 
 namespace Source
 {
@@ -14,7 +16,7 @@ namespace Source
             if (number != 0)
             {
                 var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
-                
+
                 // TODO return tuple with CodeChallengeSource
                 First(x => x.CodeChallengeSource == CodeChallengeSource.Snippets && x.CodeChallengeNumber == number);
 
@@ -31,7 +33,7 @@ namespace Source
 
         private static (string? source, int codeChallengeNumber) ShowConsoleCommands()
         {
-            var challengeSources = new string []{"LeetCode", "Hackerrank", "Snippets"}; 
+            var challengeSources = new string[] { "LeetCode", "Hackerrank", "Snippets" };
             bool showCommand = true;
             int number = default;
             string? source = default;
@@ -94,6 +96,21 @@ namespace Source
             PropertyInfo? propertyInfo = type.GetProperty("CodeChallengeNumber");
 
             return propertyInfo?.GetValue(instance);
+        }
+
+        private static CodeChallengeSource GetCodeChallengeSourceEnum(string source)
+        {
+            switch (source.ToLower() ?? string.Empty)
+            {
+                case "snippets":
+                    return CodeChallengeSource.Snippets;
+                case "leetcode":
+                    return CodeChallengeSource.Snippets;
+                case "hankerrank":
+                    return CodeChallengeSource.Snippets;
+                default:
+                    throw new ArgumentException("source isn't supported yet.");
+            }
         }
     }
 }
