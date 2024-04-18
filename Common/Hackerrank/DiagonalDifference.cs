@@ -46,7 +46,7 @@ public class DiagonalDifference : ICodeChallenge
         return Math.Abs(primarySum - secondarySum);
     }
 
-    public void GetInputValuesCommands()
+    public string GetInputValuesCommands()
     {
         throw new NotImplementedException();
     }

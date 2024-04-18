@@ -85,5 +85,10 @@ namespace Common.LeetCode
                 }
             }
         }
+
+        string IInputValues.GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

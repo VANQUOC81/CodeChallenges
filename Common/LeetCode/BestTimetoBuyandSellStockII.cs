@@ -21,7 +21,7 @@ namespace Common.LeetCode
             return MaxProfit(prices).ToString();
         }
 
-        public void GetInputValuesCommands()
+        public string GetInputValuesCommands()
         {
             throw new NotImplementedException();
         }

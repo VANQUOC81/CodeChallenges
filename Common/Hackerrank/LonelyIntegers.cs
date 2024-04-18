@@ -48,7 +48,7 @@ public class LonelyInteger : ICodeChallenge
         return unique;
     }
 
-    public void GetInputValuesCommands()
+    public string GetInputValuesCommands()
     {
         throw new NotImplementedException();
     }

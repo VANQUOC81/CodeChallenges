@@ -18,7 +18,7 @@ namespace Common.LeetCode
             return RemoveDuplicates(nums).ToString();
         }
 
-        public void GetInputValuesCommands()
+        public string GetInputValuesCommands()
         {
             throw new NotImplementedException();
         }

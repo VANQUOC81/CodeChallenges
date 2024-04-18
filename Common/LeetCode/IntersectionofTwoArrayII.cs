@@ -16,7 +16,7 @@ namespace Common.LeetCode
             return string.Join(",", result);
         }
 
-        public void GetInputValuesCommands()
+        public string GetInputValuesCommands()
         {
             throw new NotImplementedException();
         }

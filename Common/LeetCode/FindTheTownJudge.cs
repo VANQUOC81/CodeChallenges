@@ -65,7 +65,7 @@ namespace Common.LeetCode
             return -1;
         }
 
-        public void GetInputValuesCommands()
+        public string GetInputValuesCommands()
         {
             throw new NotImplementedException();
         }

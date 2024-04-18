@@ -27,7 +27,7 @@ namespace Common.Hackerrank
             return DateTime.Parse(s).ToString("HH:mm:ss");
         }
 
-        public void GetInputValuesCommands()
+        public string GetInputValuesCommands()
         {
             throw new NotImplementedException();
         }

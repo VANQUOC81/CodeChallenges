@@ -52,7 +52,7 @@ public class CalPoints : ICodeChallenge
         return sum;
     }
 
-    public void GetInputValuesCommands()
+    string IInputValues.GetInputValuesCommands()
     {
         throw new NotImplementedException();
     }

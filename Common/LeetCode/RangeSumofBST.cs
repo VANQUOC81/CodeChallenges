@@ -53,7 +53,7 @@ namespace Common.LeetCode
             return displayIntResultAsOneLine(result);
         }
 
-        public void GetInputValuesCommands()
+        public string GetInputValuesCommands()
         {
             throw new NotImplementedException();
         }

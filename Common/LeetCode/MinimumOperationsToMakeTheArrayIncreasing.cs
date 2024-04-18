@@ -17,7 +17,7 @@ namespace Common.LeetCode
             return MinOperations(input).ToString();
         }
 
-        public void GetInputValuesCommands()
+        public string GetInputValuesCommands()
         {
             throw new NotImplementedException();
         }

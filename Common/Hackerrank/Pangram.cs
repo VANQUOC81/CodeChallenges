@@ -50,7 +50,7 @@ public class Pangram : ICodeChallenge
         }
     }
 
-    public void GetInputValuesCommands()
+    public string GetInputValuesCommands()
     {
         throw new NotImplementedException();
     }

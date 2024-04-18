@@ -33,7 +33,7 @@ public class FlippingBits : ICodeChallenge
         return n ^ maxInt;
     }
 
-    public void GetInputValuesCommands()
+    public string GetInputValuesCommands()
     {
         throw new NotImplementedException();
     }

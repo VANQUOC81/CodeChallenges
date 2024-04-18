@@ -23,7 +23,7 @@ namespace Common.LeetCode
             return concat;
         }
 
-        public void GetInputValuesCommands()
+        public string GetInputValuesCommands()
         {
             throw new NotImplementedException();
         }

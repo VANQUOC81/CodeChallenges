@@ -41,7 +41,7 @@ public class CountingSort1 : ICodeChallenge
         return result;
     }
 
-    public void GetInputValuesCommands()
+    public string GetInputValuesCommands()
     {
         throw new NotImplementedException();
     }

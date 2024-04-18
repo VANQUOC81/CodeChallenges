@@ -51,7 +51,7 @@ namespace Common.Hackerrank
             return result;
         }
 
-        public void GetInputValuesCommands()
+        public string GetInputValuesCommands()
         {
             throw new NotImplementedException();
         }
