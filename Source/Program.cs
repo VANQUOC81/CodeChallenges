@@ -29,17 +29,18 @@ namespace Source
             }
         }
 
-        private static int ShowConsoleCommands()
+        private static (string? source, int codeChallengeNumber) ShowConsoleCommands()
         {
             var challengeSources = new string []{"LeetCode", "Hackerrank", "Snippets"}; 
             bool showCommand = true;
             int number = default;
+            string? source = default;
             while (showCommand)
             {
                 // show command prompts.
                 Console.WriteLine("Type in the challenge source:");
 
-                string? source = Console.ReadLine();
+                source = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(source) || !challengeSources.Contains(source))
                 {
@@ -78,7 +79,7 @@ namespace Source
                 }
             }
 
-            return number;
+            return (source, number);
         }
 
         private static object? GetCodeChallengeNumber(string fileName, string? source)
