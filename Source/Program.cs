@@ -10,12 +10,7 @@ namespace Source
         public static void Main()
         {
             // show options
-            (string? source, int number) = ShowConsoleCommands();
-
-            if (source is null)
-            {
-                throw new ArgumentNullException(nameof(source));
-            }
+            (string source, int number) = ShowConsoleCommands();
 
             if (number != 0)
             {
@@ -33,18 +28,18 @@ namespace Source
             }
         }
 
-        private static (string? source, int codeChallengeNumber) ShowConsoleCommands()
+        private static (string source, int codeChallengeNumber) ShowConsoleCommands()
         {
             var challengeSources = new string[] { "LeetCode", "Hackerrank", "Snippets" };
             bool showCommand = true;
             int number = default;
-            string? source = default;
+            string source = string.Empty;
             while (showCommand)
             {
                 // show command prompts.
                 Console.WriteLine("Type in the challenge source:");
 
-                source = Console.ReadLine();
+                source = Console.ReadLine() ?? string.Empty;
 
                 if (string.IsNullOrWhiteSpace(source) || !challengeSources.Contains(source))
                 {
@@ -86,7 +81,7 @@ namespace Source
             return (source, number);
         }
 
-        private static object? GetCodeChallengeNumber(string fileName, string? source)
+        private static object? GetCodeChallengeNumber(string fileName, string source)
         {
             // load the desired assembly
             Assembly externalAssembly = Assembly.LoadFrom("../Common/obj/Debug/net7.0/common.dll");
