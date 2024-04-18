@@ -19,9 +19,8 @@ namespace Source
 
             if (number != 0)
             {
-                var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
-
-                First(x => x.CodeChallengeSource == GetCodeChallengeSourceEnum(source) && x.CodeChallengeNumber == number);
+                var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>()
+                .First(x => x.CodeChallengeSource == GetCodeChallengeSourceEnum(source) && x.CodeChallengeNumber == number);
 
                 // get input values Why do you have this here?
                 codeChallenge.GetInputValuesCommands();

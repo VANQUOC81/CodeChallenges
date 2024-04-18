@@ -46,8 +46,29 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
         }
     }
 
-    public void GetInputValuesCommands()
+    public string GetInputValuesCommands()
     {
-        throw new NotImplementedException();
+        bool showCommand = true;
+        string input = string.Empty;
+        while (showCommand)
+        {
+            // show command prompts.
+            Console.WriteLine("Please provide input values for the challenge:");
+
+            input = Console.ReadLine() ?? string.Empty;
+
+            if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
+            {
+                Console.WriteLine($"Input values cannot be empty. Please try again.");
+
+                continue;
+            }
+            else
+            {
+                showCommand = false;
+            }
+        }
+
+        return input;
     }
 }
