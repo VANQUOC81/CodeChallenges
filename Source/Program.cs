@@ -13,12 +13,18 @@ namespace Source
         {
             // show options
             (string? source, int number) = ShowConsoleCommands();
+
+            if (source is null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
             if (number != 0)
             {
                 var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
 
                 // TODO return tuple with CodeChallengeSource
-                First(x => x.CodeChallengeSource == CodeChallengeSource.Snippets && x.CodeChallengeNumber == number);
+                First(x => x.CodeChallengeSource == GetCodeChallengeSourceEnum(source) && x.CodeChallengeNumber == number);
 
                 // get input values Why do you have this here?
                 codeChallenge.GetInputValuesCommands();
@@ -100,17 +106,13 @@ namespace Source
 
         private static CodeChallengeSource GetCodeChallengeSourceEnum(string source)
         {
-            switch (source.ToLower() ?? string.Empty)
+            return (source.ToLower() ?? string.Empty) switch
             {
-                case "snippets":
-                    return CodeChallengeSource.Snippets;
-                case "leetcode":
-                    return CodeChallengeSource.Snippets;
-                case "hankerrank":
-                    return CodeChallengeSource.Snippets;
-                default:
-                    throw new ArgumentException("source isn't supported yet.");
-            }
+                "snippets" => CodeChallengeSource.Snippets,
+                "leetcode" => CodeChallengeSource.Snippets,
+                "hankerrank" => CodeChallengeSource.Snippets,
+                _ => throw new ArgumentException("source isn't supported yet."),
+            };
         }
     }
 }
