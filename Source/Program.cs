@@ -103,8 +103,8 @@ namespace Source
             return (source.ToLower() ?? string.Empty) switch
             {
                 "snippets" => CodeChallengeSource.Snippets,
-                "leetcode" => CodeChallengeSource.Snippets,
-                "hankerrank" => CodeChallengeSource.Snippets,
+                "leetcode" => CodeChallengeSource.LeetCode,
+                "hankerrank" => CodeChallengeSource.Hankerrank,
                 _ => throw new ArgumentException("source isn't supported yet."),
             };
         }
