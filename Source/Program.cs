@@ -2,8 +2,6 @@
 using Common.Enums;
 using System.Reflection;
 using Source.Factories;
-using System.ComponentModel;
-using System.Collections;
 
 namespace Source
 {
@@ -23,7 +21,6 @@ namespace Source
             {
                 var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
 
-                // TODO return tuple with CodeChallengeSource
                 First(x => x.CodeChallengeSource == GetCodeChallengeSourceEnum(source) && x.CodeChallengeNumber == number);
 
                 // get input values Why do you have this here?
