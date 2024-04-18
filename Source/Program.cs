@@ -10,7 +10,7 @@ namespace Source
         public static void Main()
         {
             // show options
-            int number = ShowConsoleCommands();
+            (string? source, int number) = ShowConsoleCommands();
             if (number != 0)
             {
                 var codeChallenge = ServiceProviderFactory.GetRequiredService<ICodeChallenge>().
