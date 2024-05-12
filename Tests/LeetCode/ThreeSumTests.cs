@@ -9,11 +9,11 @@ namespace CodeChallenges.Tests.LeetCode
         public void ThreeSum_ListIntegers_ReturnsExpectedListIntegers()
         {
             // Arrange
-            var codeChallenge = new ThreeSum();
+            string input = "-1,0,1,2,-1,-4";
             const string expected = "-1, -1, 2-1, 0, 1";
 
             // Act
-            var actual = codeChallenge.Execute();
+            string actual = new ThreeSum().Execute(input);
 
             // Assert
             Assert.AreEqual(expected, actual);

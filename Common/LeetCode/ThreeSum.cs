@@ -11,7 +11,11 @@ namespace Common.LeetCode
 
         public string Execute(string input)
         {
-            var result = threeSum(new int[] { -1, 0, 1, 2, -1, -4 });
+            var stringArray = input.Split(",");
+
+            int[] intArray = Array.ConvertAll(stringArray, int.Parse);
+
+            var result = threeSum(intArray);
 
             var concat = "";
 
