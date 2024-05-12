@@ -9,13 +9,13 @@ public class FlippingBits : ICodeChallenge
 
     public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-    public string Execute()
+    public string Execute(string input)
     {
         // Sample input
-        long input = 2147483647; // Example input value
+        long input2 = 2147483647; // Example input value
 
         // Calling function and return
-        return GetFlippingBits(input).ToString();
+        return GetFlippingBits(input2).ToString();
     }
 
     /*

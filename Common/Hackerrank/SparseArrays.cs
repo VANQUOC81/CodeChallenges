@@ -9,7 +9,7 @@ namespace Common.Hackerrank
 
         public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-        public string Execute()
+        public string Execute(string input)
         {
             List<string> strings = new List<string>
             {

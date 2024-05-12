@@ -15,7 +15,7 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
         negative numbers are rounded down to the nearest larger integer
      */
 
-    public string Execute()
+    public string Execute(string input)
     {
         decimal value = -1.5M;
 

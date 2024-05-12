@@ -9,7 +9,7 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 350;
 
-        public string Execute()
+        public string Execute(string input)
         {
             var result = Intersect(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 });
 

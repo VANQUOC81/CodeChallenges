@@ -9,7 +9,7 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 15;
 
-        public string Execute()
+        public string Execute(string input)
         {
             var result = threeSum(new int[] { -1, 0, 1, 2, -1, -4 });
 

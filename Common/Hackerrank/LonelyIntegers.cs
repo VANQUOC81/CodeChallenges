@@ -16,7 +16,7 @@ public class LonelyInteger : ICodeChallenge
      * The function accepts INTEGER_ARRAY a as parameter.
      */
 
-    public string Execute()
+    public string Execute(string input)
     {
         List<int> numbers = new() { 1, 2, 3, 4, 3, 2, 1 };
 

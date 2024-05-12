@@ -9,12 +9,12 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 1827;
 
-        public string Execute()
+        public string Execute(string input)
         {
             // test case
-            var input = new int[] { 1, 1, 1 };
+            var input2 = new int[] { 1, 1, 1 };
 
-            return MinOperations(input).ToString();
+            return MinOperations(input2).ToString();
         }
 
         public string GetInputValuesCommands()

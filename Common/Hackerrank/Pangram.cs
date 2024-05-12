@@ -16,7 +16,7 @@ public class Pangram : ICodeChallenge
      * The function accepts STRING s as parameter.
      */
 
-    public string Execute()
+    public string Execute(string input)
     {
         string s = "We promptly judged antique ivory buckles for the prize";
 

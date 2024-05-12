@@ -9,7 +9,7 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 938;
 
-        public string Execute()
+        public string Execute(string input)
         {
             // Arrange
 #pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.

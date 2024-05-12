@@ -14,7 +14,7 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 122;
 
-        public string Execute()
+        public string Execute(string input)
         {
             var prices = new int[] { 7, 1, 5, 3, 6, 4 };
 

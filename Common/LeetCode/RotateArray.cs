@@ -13,7 +13,7 @@ namespace Common.LeetCode
         
         public int[] nums = new int[] {};
 
-        public string Execute()
+        public string Execute(string input)
         {
             return string.Join(",", Rotate(nums, k));
         }

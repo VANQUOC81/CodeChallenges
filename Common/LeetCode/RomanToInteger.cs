@@ -9,11 +9,11 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 13;
 
-        public string Execute()
+        public string Execute(string input)
         {
-            var input = "MCMXCIV";
+            var input2 = "MCMXCIV";
 
-            return RomanToInt(input).ToString();
+            return RomanToInt(input2).ToString();
         }
 
         public string GetInputValuesCommands()

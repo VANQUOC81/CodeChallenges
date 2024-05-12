@@ -9,7 +9,7 @@ public class DiagonalDifference : ICodeChallenge
 
     public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-    public string Execute()
+    public string Execute(string input)
     {
         // Sample input
         List<List<int>> inputList = new()

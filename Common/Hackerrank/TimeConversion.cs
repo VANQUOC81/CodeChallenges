@@ -9,7 +9,7 @@ namespace Common.Hackerrank
 
         public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-        public string Execute()
+        public string Execute(string input)
         {
             // Calling function and return
             return ConvertTime("07:05:45PM");

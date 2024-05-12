@@ -9,7 +9,7 @@ public class CountingSort1 : ICodeChallenge
 
     public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-    public string Execute()
+    public string Execute(string input)
     {
         // Sample input
         List<int> inputList = new() { 63, 25, 73, 1, 98, 73, 56, 84 /* add your elements here */ };

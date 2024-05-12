@@ -9,7 +9,7 @@ public class CalPoints : ICodeChallenge
 
     public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-    public string Execute()
+    public string Execute(string input)
     {
         string[] ops = {"5", "-2", "4", "C", "D", "9", "+", "+"};
 

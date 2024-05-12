@@ -9,12 +9,12 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 997;
 
-        public string Execute()
+        public string Execute(string input)
         {
             var N = "2";
-            var input = "1 2";
+            var input2 = "1 2";
 
-            var components = input.Split(',');
+            var components = input2.Split(',');
             var myList = new List<int[]>();
 
             var size = components.Length;

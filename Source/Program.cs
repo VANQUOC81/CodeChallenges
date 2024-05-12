@@ -21,7 +21,7 @@ namespace Source
                 string input = codeChallenge.GetInputValuesCommands();
 
                 // TODO pass in input to execute challenge
-                var result = codeChallenge.Execute();
+                var result = codeChallenge.Execute(input);
 
                 // display result
                 Console.WriteLine($"result: {result}");

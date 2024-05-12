@@ -9,7 +9,7 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 26;
 
-        public string Execute()
+        public string Execute(string input)
         {
             // using in-place algorithm updates the passed in nums variable in Main scope.
             var nums = new[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
