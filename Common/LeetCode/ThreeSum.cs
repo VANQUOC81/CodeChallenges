@@ -27,11 +27,6 @@ namespace Common.LeetCode
             return concat;
         }
 
-        public string GetInputValuesCommands()
-        {
-            throw new NotImplementedException();
-        }
-
         public IList<IList<int>> threeSum(int[] nums)
         {
             Array.Sort(nums); // sort the array
@@ -67,6 +62,11 @@ namespace Common.LeetCode
             }
 
             return result;
+        }
+
+        (string input1, string input2, string input3, string input4) IInputValues.GetInputValuesCommands()
+        {
+            throw new NotImplementedException();
         }
     }
 }

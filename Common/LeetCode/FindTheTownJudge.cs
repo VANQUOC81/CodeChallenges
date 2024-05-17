@@ -14,7 +14,7 @@ namespace Common.LeetCode
             var N = "2";
             var input2 = "1 2";
 
-            var components = input2.Split(',');
+            string[] components = input2.Split(',');
             var myList = new List<int[]>();
 
             var size = components.Length;
@@ -67,7 +67,28 @@ namespace Common.LeetCode
 
         public string GetInputValuesCommands()
         {
-            throw new NotImplementedException();
+            bool showCommand = true;
+            string input = string.Empty;
+            while (showCommand)
+            {
+                // show command prompts.
+                Console.WriteLine("Please provide input values for the challenge:");
+
+                input = Console.ReadLine() ?? string.Empty;
+
+                if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
+                {
+                    Console.WriteLine($"Input values cannot be empty. Please try again.");
+
+                    continue;
+                }
+                else
+                {
+                    showCommand = false;
+                }
+            }
+
+            return input;
         }
     }
 }

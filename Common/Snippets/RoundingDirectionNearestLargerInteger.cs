@@ -46,7 +46,7 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
         }
     }
 
-    public string GetInputValuesCommands()
+    public List<string> GetInputValuesCommands()
     {
         bool showCommand = true;
         string input = string.Empty;
