@@ -48,12 +48,13 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
 
     public List<string> GetInputValuesCommands()
     {
+    	var inputList = new List<string>();
         bool showCommand = true;
         string input = string.Empty;
         while (showCommand)
         {
             // show command prompts.
-            Console.WriteLine("Please provide input values for the challenge:");
+            Console.WriteLine("Please provide (more) input values for the challenge:");
 
             input = Console.ReadLine() ?? string.Empty;
 
@@ -65,10 +66,31 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
             }
             else
             {
-                showCommand = false;
+				inputList.Add(input);
+				add_more_input_question:
+				Console.WriteLine("Do you want to add more input?");
+
+				input = Console.ReadLine() ?? string.Empty;
+				
+				if (input.ToLower().Equals("no") || input.ToLower().Equals("yes"))
+				{
+					if(input.ToLower().Equals("yes"))
+					{
+						continue;
+					}
+					else
+					{
+						showCommand = false;
+					}
+				}
+				else
+				{
+					Console.WriteLine("Please say yes or no");
+					goto add_more_input_question;
+				}
             }
         }
 
-        return input;
+        return inputList;
     }
 }
