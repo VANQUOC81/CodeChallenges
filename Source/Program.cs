@@ -18,7 +18,7 @@ namespace Source
                 .First(x => x.CodeChallengeSource == GetCodeChallengeSourceEnum(challengeSource) && x.CodeChallengeNumber == number);
 
                 // get input values Why do you have this here?
-                string input = codeChallenge.GetInputValuesCommands();
+                List<string> input = codeChallenge.GetInputValuesCommands();
 
                 // TODO pass in input to execute challenge
                 var result = codeChallenge.Execute(input);

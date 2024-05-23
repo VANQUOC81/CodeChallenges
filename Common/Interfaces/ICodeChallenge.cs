@@ -8,7 +8,7 @@ namespace Common.Interfaces
 
         int CodeChallengeNumber { get; }
 
-        // executes with input parameters identical to examples
-        string Execute(string input);
+        // executes with list of input parameters identical to examples
+        string Execute(List<string> input);
     }
 }

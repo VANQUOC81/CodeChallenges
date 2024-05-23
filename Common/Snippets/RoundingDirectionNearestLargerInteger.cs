@@ -15,11 +15,11 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
         negative numbers are rounded down to the nearest larger integer
      */
 
-    public string Execute(string input)
+    public string Execute(List<string> input)
     {
-        decimal value = -1.5M;
-
-        return RoundToNearestLargerInteger(value).ToString(CultureInfo.InvariantCulture);
+        string value = input.Single();
+        //decimal value = -1.5M;
+        return RoundToNearestLargerInteger(Convert.ToDecimal(value)).ToString(CultureInfo.InvariantCulture);
     }
 
     public static decimal RoundToNearestLargerInteger(decimal value)
@@ -48,15 +48,15 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
 
     public List<string> GetInputValuesCommands()
     {
-    	var inputList = new List<string>();
+        var inputList = new List<string>();
         bool showCommand = true;
-        string input = string.Empty;
+
         while (showCommand)
         {
             // show command prompts.
             Console.WriteLine("Please provide (more) input values for the challenge:");
 
-            input = Console.ReadLine() ?? string.Empty;
+            string input = Console.ReadLine() ?? string.Empty;
 
             if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
             {
@@ -66,28 +66,8 @@ public class RoundingDirectionNearestLargerInteger : ICodeChallenge
             }
             else
             {
-				inputList.Add(input);
-				add_more_input_question:
-				Console.WriteLine("Do you want to add more input?");
-
-				input = Console.ReadLine() ?? string.Empty;
-				
-				if (input.ToLower().Equals("no") || input.ToLower().Equals("yes"))
-				{
-					if(input.ToLower().Equals("yes"))
-					{
-						continue;
-					}
-					else
-					{
-						showCommand = false;
-					}
-				}
-				else
-				{
-					Console.WriteLine("Please say yes or no");
-					goto add_more_input_question;
-				}
+                inputList.Add(input);
+                showCommand = false;
             }
         }
 

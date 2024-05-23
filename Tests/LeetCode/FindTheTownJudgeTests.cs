@@ -11,9 +11,13 @@ namespace CodeChallenges.Tests.LeetCode
             // Arrange
             var codeChallenge = new FindTheTownJudge();
             const string expected = "2";
-
+            var inputList = new List<string>
+            {
+                "2", "1 2"
+            };
+            
             // Act
-            var actual = codeChallenge.Execute();
+            var actual = codeChallenge.Execute(inputList);
 
             // Assert
             Assert.AreEqual(expected, actual);
