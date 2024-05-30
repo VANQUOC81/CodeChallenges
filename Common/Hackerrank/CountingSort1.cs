@@ -9,10 +9,11 @@ public class CountingSort1 : ICodeChallenge
 
     public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-    public string Execute(string input)
+    public string Execute(List<string> input)
     {
         // Sample input
-        List<int> inputList = new() { 63, 25, 73, 1, 98, 73, 56, 84 /* add your elements here */ };
+        //List<int> inputList = new() { 63, 25, 73, 1, 98, 73, 56, 84 /* add your elements here */ };
+        List<int> inputList = input.Select(int.Parse).ToList();
 
         // Calling counting sort function and return
         return string.Join(",", CountingSort(inputList));
@@ -41,8 +42,51 @@ public class CountingSort1 : ICodeChallenge
         return result;
     }
 
-    public string GetInputValuesCommands()
+    public List<string> GetInputValuesCommands()
     {
-        throw new NotImplementedException();
+        var inputList = new List<string>();
+        bool showCommand = true;
+
+        while (showCommand)
+        {
+            // show command prompts.
+            Console.WriteLine("Please provide (more) input values for the challenge:");
+
+            string input = Console.ReadLine() ?? string.Empty;
+
+            if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
+            {
+                Console.WriteLine($"Input values cannot be empty. Please try again.");
+
+                continue;
+            }
+            else
+            {
+                inputList.Add(input);
+            add_more_input_question:
+                Console.WriteLine("Do you want to add more input?");
+
+                input = Console.ReadLine() ?? string.Empty;
+
+                if (input.ToLower().Equals("no") || input.ToLower().Equals("yes"))
+                {
+                    if (input.ToLower().Equals("yes"))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        showCommand = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please say yes or no");
+                    goto add_more_input_question;
+                }
+            }
+        }
+
+        return inputList;
     }
 }
