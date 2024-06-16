@@ -9,13 +9,14 @@ public class FlippingBits : ICodeChallenge
 
     public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-    public string Execute(string input)
+    public string Execute(List<string> input)
     {
         // Sample input
-        long input2 = 2147483647; // Example input value
+        var inputListTypeLong = input.Select(long.Parse).ToList();
+        //long input2 = 2147483647; // Example input value
 
         // Calling function and return
-        return GetFlippingBits(input2).ToString();
+        return GetFlippingBits(inputListTypeLong.Single()).ToString();
     }
 
     /*
@@ -33,8 +34,31 @@ public class FlippingBits : ICodeChallenge
         return n ^ maxInt;
     }
 
-    public string GetInputValuesCommands()
+    public List<string> GetInputValuesCommands()
     {
-        throw new NotImplementedException();
+        var inputList = new List<string>();
+        bool showCommand = true;
+
+        while (showCommand)
+        {
+            // show command prompts.
+            Console.WriteLine("Please provide (more) input values for the challenge:");
+
+            string input = Console.ReadLine() ?? string.Empty;
+
+            if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
+            {
+                Console.WriteLine($"Input values cannot be empty. Please try again.");
+
+                continue;
+            }
+            else
+            {
+                inputList.Add(input);
+                showCommand = false;
+            }
+        }
+
+        return inputList;
     }
 }
