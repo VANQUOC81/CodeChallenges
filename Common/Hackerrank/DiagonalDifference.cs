@@ -9,15 +9,16 @@ public class DiagonalDifference : ICodeChallenge
 
     public int CodeChallengeNumber => throw new NotImplementedException("Hankerrank doesn't have numbers");
 
-    public string Execute(string input)
+    public string Execute(List<string> input)
     {
+        // TODO iets verzinnen voor List<List<string>>
         // Sample input
-        List<List<int>> inputList = new()
-        {
-            new List<int>() { 11, 2, 4 },
-            new List<int>() { 4, 5, 6 },
-            new List<int>() { 10, 8, -12 }
-        };
+        // List<List<int>> inputList = new()
+        // {
+        //     new List<int>() { 11, 2, 4 },
+        //     new List<int>() { 4, 5, 6 },
+        //     new List<int>() { 10, 8, -12 }
+        // };
 
         // Calling function and return
         return GetDiagonalDifference(inputList).ToString();
@@ -46,8 +47,51 @@ public class DiagonalDifference : ICodeChallenge
         return Math.Abs(primarySum - secondarySum);
     }
 
-    public string GetInputValuesCommands()
+    public List<string> GetInputValuesCommands()
     {
-        throw new NotImplementedException();
+        var inputList = new List<string>();
+        bool showCommand = true;
+
+        while (showCommand)
+        {
+            // show command prompts.
+            Console.WriteLine("Please provide (more) input values for the challenge:");
+
+            string input = Console.ReadLine() ?? string.Empty;
+
+            if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
+            {
+                Console.WriteLine($"Input values cannot be empty. Please try again.");
+
+                continue;
+            }
+            else
+            {
+                inputList.Add(input);
+            add_more_input_question:
+                Console.WriteLine("Do you want to add more input?");
+
+                input = Console.ReadLine() ?? string.Empty;
+
+                if (input.ToLower().Equals("no") || input.ToLower().Equals("yes"))
+                {
+                    if (input.ToLower().Equals("yes"))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        showCommand = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please say yes or no");
+                    goto add_more_input_question;
+                }
+            }
+        }
+
+        return inputList;
     }
 }
