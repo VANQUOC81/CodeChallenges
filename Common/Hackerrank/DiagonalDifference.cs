@@ -11,17 +11,20 @@ public class DiagonalDifference : ICodeChallenge
 
     public string Execute(List<string> input)
     {
-        // TODO iets verzinnen voor List<List<string>>
-        // Sample input
-        // List<List<int>> inputList = new()
-        // {
-        //     new List<int>() { 11, 2, 4 },
-        //     new List<int>() { 4, 5, 6 },
-        //     new List<int>() { 10, 8, -12 }
-        // };
+        // Sample how a input may look like for this challenge
+        // input = new List<string>{ "11, 2, 4", "4, 5, 6", "10, 8, -12"};
+        List<List<int>> intList = new List<List<int>>();
+
+        foreach (var inputValues in input)
+        {
+            List<int> tempList = inputValues.Split(',')
+                                    .Select(int.Parse)
+                                    .ToList();
+            intList.Add(tempList);
+        }
 
         // Calling function and return
-        return GetDiagonalDifference(inputList).ToString();
+        return GetDiagonalDifference(intList).ToString();
     }
 
     /*
@@ -55,7 +58,7 @@ public class DiagonalDifference : ICodeChallenge
         while (showCommand)
         {
             // show command prompts.
-            Console.WriteLine("Please provide (more) input values for the challenge:");
+            Console.WriteLine("Please provide (more) input values for the challenge like e.g. '11, 2, 4':");
 
             string input = Console.ReadLine() ?? string.Empty;
 

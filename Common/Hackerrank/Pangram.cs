@@ -16,8 +16,9 @@ public class Pangram : ICodeChallenge
      * The function accepts STRING s as parameter.
      */
 
-    public string Execute(string input)
+    public string Execute(List<string> input)
     {
+        // input for unit test
         string s = "We promptly judged antique ivory buckles for the prize";
 
         return GetPangrams(s);
@@ -50,8 +51,31 @@ public class Pangram : ICodeChallenge
         }
     }
 
-    public string GetInputValuesCommands()
+    public List<string> GetInputValuesCommands()
     {
-        throw new NotImplementedException();
+        var inputList = new List<string>();
+        bool showCommand = true;
+
+        while (showCommand)
+        {
+            // show command prompts.
+            Console.WriteLine("Please provide (more) input values for the challenge:");
+
+            string input = Console.ReadLine() ?? string.Empty;
+
+            if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
+            {
+                Console.WriteLine($"Input values cannot be empty. Please try again.");
+
+                continue;
+            }
+            else
+            {
+                inputList.Add(input);
+                showCommand = false;
+            }
+        }
+
+        return inputList;
     }
 }
