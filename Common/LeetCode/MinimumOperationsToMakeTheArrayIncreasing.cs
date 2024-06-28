@@ -9,17 +9,12 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 1827;
 
-        public string Execute(string input)
+        public string Execute(List<string> input)
         {
             // test case
-            var input2 = new int[] { 1, 1, 1 };
+            //var input2 = new int[] { 1, 1, 1 };
 
-            return MinOperations(input2).ToString();
-        }
-
-        public string GetInputValuesCommands()
-        {
-            throw new NotImplementedException();
+            return MinOperations(input.Select(int.Parse).ToArray()).ToString();
         }
 
         public int MinOperations(int[] nums)
@@ -43,6 +38,54 @@ namespace Common.LeetCode
 
             // return the minimum number of operations needed to make nums strictly increasing
             return count;
+        }
+
+        public List<string> GetInputValuesCommands()
+        {
+            var inputList = new List<string>();
+            bool showCommand = true;
+
+            while (showCommand)
+            {
+                // show command prompts.
+                Console.WriteLine("Please provide (more) input values for the challenge like e.g. '11':");
+
+                string input = Console.ReadLine() ?? string.Empty;
+
+                if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
+                {
+                    Console.WriteLine($"Input values cannot be empty. Please try again.");
+
+                    continue;
+                }
+                else
+                {
+                    inputList.Add(input);
+                add_more_input_question:
+                    Console.WriteLine("Do you want to add more input?");
+
+                    input = Console.ReadLine() ?? string.Empty;
+
+                    if (input.ToLower().Equals("no") || input.ToLower().Equals("yes"))
+                    {
+                        if (input.ToLower().Equals("yes"))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            showCommand = false;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please say yes or no");
+                        goto add_more_input_question;
+                    }
+                }
+            }
+
+            return inputList;
         }
     }
 }
