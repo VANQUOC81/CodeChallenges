@@ -14,16 +14,12 @@ namespace Common.LeetCode
 
         public int CodeChallengeNumber => 122;
 
-        public string Execute(string input)
+        public string Execute(List<string> input)
         {
-            var prices = new int[] { 7, 1, 5, 3, 6, 4 };
+            // unit test sample input
+            //var prices = new int[] { 7, 1, 5, 3, 6, 4 };
 
-            return MaxProfit(prices).ToString();
-        }
-
-        public string GetInputValuesCommands()
-        {
-            throw new NotImplementedException();
+            return MaxProfit(input.Select(int.Parse).ToArray()).ToString();
         }
 
         public int MaxProfit(int[] prices)
@@ -50,6 +46,54 @@ namespace Common.LeetCode
             }
 
             return totalMaxProfit;
+        }
+
+        public List<string> GetInputValuesCommands()
+        {
+            var inputList = new List<string>();
+            bool showCommand = true;
+
+            while (showCommand)
+            {
+                // show command prompts.
+                Console.WriteLine("Please provide (more) input values for the challenge like e.g. '11':");
+
+                string input = Console.ReadLine() ?? string.Empty;
+
+                if (string.IsNullOrWhiteSpace(input) || input.Length == 0)
+                {
+                    Console.WriteLine($"Input values cannot be empty. Please try again.");
+
+                    continue;
+                }
+                else
+                {
+                    inputList.Add(input);
+                add_more_input_question:
+                    Console.WriteLine("Do you want to add more input?");
+
+                    input = Console.ReadLine() ?? string.Empty;
+
+                    if (input.ToLower().Equals("no") || input.ToLower().Equals("yes"))
+                    {
+                        if (input.ToLower().Equals("yes"))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            showCommand = false;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please say yes or no");
+                        goto add_more_input_question;
+                    }
+                }
+            }
+
+            return inputList;
         }
     }
 }
